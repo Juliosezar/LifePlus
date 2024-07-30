@@ -1,0 +1,45 @@
+{% load compress %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include "base_head.html" %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home_page.css' %}">
+</head>
+
+<body dir="rtl">
+
+    {% include "navbar.html" %}
+    {% include 'messages.html' %}
+    <div id="main">
+        <div id="box1">
+            <div id="searchbox">
+                <form novalidate action="" class="serch_box_inside" method="post">
+                    {% csrf_token %}
+                    <img class="search_img" src="{% static 'img/search-user.png' %}" alt="search">
+                    {{ form.search }}
+                    <input class="input_btn submit_btn" type="submit" value="🔍">
+                </form>
+{#                <form novalidate action="{% url 'customers:custumers_list' %}" class="serch_box_inside" method="post">#}
+{#                    {% csrf_token %}#}
+{#                    <img class="search_img" src="{% static 'img/search-user.png' %}" alt="search">#}
+{#                    {{ search_user.search_user }}#}
+{#                    <input class="input_btn submit_btn" type="submit" value="🔍">#}
+{#                </form>#}
+            </div>
+
+            <a href="" class="links link2" id="pay_confirm">کاربر جدید</a>
+            <a href="" class="links link2" id="pay_confirm">لیست کاربرها</a>
+
+            <a href="" class="links" id="servers">گزارش گیری</a>
+            <a href="" class="links" id="customers">تاریخچه</a>
+            <a href="" class="links" id="customers">تنظیمات</a>
+        </div>
+    </div>
+
+
+{% include "loading.html" %}
+</body>
+</html>
